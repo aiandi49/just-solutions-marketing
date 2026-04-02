@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Just Solutions — Marketing Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg0: #0a0a0c;
+  --bg1: #111116;
+  --bg2: #18181f;
+  --bg3: #1f1f28;
+  --bg4: #27272f;
+  --border: rgba(255,255,255,0.07);
+  --border-hi: rgba(255,255,255,0.14);
+  --gold: #d4a843;
+  --gold-dim: #a07c28;
+  --gold-glow: rgba(212,168,67,0.15);
+  --orange: #e8743a;
+  --teal: #2dd4b0;
+  --blue: #4fa3e8;
+  --red: #e85454;
+  --text: #f0f0f2;
+  --text2: #9898a8;
+  --text3: #5a5a6a;
+  --radius: 10px;
+  --radius-lg: 16px;
+  font-family: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg0); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg1); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10,10,12,0.92);
+  backdrop-filter: blur(12px);
+}
+.logo-mark { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; color: #000; letter-spacing: 1px;
+}
+.logo-text .name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 3px; color: var(--text); }
+.logo-text .tagline { font-size: 10px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+.nav-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.3);
+  color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 999px;
+}
+.nav-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* HERO */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 5rem 3rem 4rem;
+  text-align: center;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 20%, rgba(212,168,67,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(232,116,58,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0c 0%, #0d0d14 100%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.3);
+  color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 2rem;
+}
+h1.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: 6px; line-height: 0.95;
+  color: var(--text); margin-bottom: 1.5rem;
+}
+h1.hero-title span { color: var(--gold); }
+.hero-sub {
+  font-size: 1.1rem; color: var(--text2);
+  max-width: 580px; margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+.platform-chips {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 2rem;
+}
+.platform-chip {
+  background: var(--bg2); border: 1px solid var(--border);
+  padding: 8px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 500; color: var(--text2);
+  display: flex; align-items: center; gap: 8px;
+  transition: all .2s; cursor: default;
+}
+.platform-chip:hover { background: var(--gold-glow); border-color: var(--gold); color: var(--gold); }
+.platform-chip .icon { font-size: 15px; }
+
+/* MAIN */
+#main { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+/* SECTION HEADERS */
+.section-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 1.5rem; margin-top: 3rem;
+}
+.section-header:first-child { margin-top: 0; }
+.section-icon {
+  width: 42px; height: 42px; border-radius: var(--radius);
+  background: var(--gold-glow); border: 1px solid rgba(212,168,67,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 3px; color: var(--text); }
+.section-sub { font-size: 13px; color: var(--text3); margin-top: 2px; }
+
+/* CARDS */
+.card {
+  background: var(--bg1); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+  margin-bottom: 1rem; transition: border-color .2s;
+}
+.card:hover { border-color: var(--border-hi); }
+.card-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 2px;
+  color: var(--gold); margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.card p { color: var(--text2); font-size: 14px; line-height: 1.7; margin-bottom: 0.5rem; }
+.card p:last-child { margin-bottom: 0; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+/* PLATFORM BLOCKS */
+.platform-block {
+  background: var(--bg1); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.platform-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 14px;
+}
+.platform-logo {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; flex-shrink: 0;
+}
+.platform-logo.fb   { background: rgba(24,119,242,0.15); border: 1px solid rgba(24,119,242,0.3); }
+.platform-logo.al   { background: rgba(212,168,67,0.1);  border: 1px solid rgba(212,168,67,0.3); }
+.platform-logo.nd   { background: rgba(45,212,176,0.1);  border: 1px solid rgba(45,212,176,0.3); }
+.platform-logo.dh   { background: rgba(232,116,58,0.1);  border: 1px solid rgba(232,116,58,0.3); }
+.platform-logo.fl   { background: rgba(79,163,232,0.1);  border: 1px solid rgba(79,163,232,0.3); }
+.platform-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 3px; }
+.platform-desc { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.platform-body { padding: 1.5rem; }
+
+/* TIPS LIST */
+.tips-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.tips-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 14px; color: var(--text2); line-height: 1.6;
+}
+.tip-bullet {
+  width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; margin-top: 1px;
+  background: var(--gold-glow); border: 1px solid rgba(212,168,67,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--gold); font-weight: 600;
+}
+
+/* STAT CHIPS */
+.stat-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
+.stat-chip {
+  background: var(--bg3); border: 1px solid var(--border);
+  padding: 8px 14px; border-radius: var(--radius);
+  font-size: 12px; color: var(--text3);
+  display: flex; align-items: center; gap: 6px;
+}
+.stat-chip strong { color: var(--text); font-size: 13px; }
+
+/* ACTION ITEMS */
+.action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.action-item {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem;
+  transition: all .2s;
+}
+.action-item:hover { border-color: var(--gold-dim); background: var(--bg3); }
+.action-check {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--bg3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; margin-bottom: 8px;
+  cursor: pointer; transition: all .2s;
+}
+.action-check.done { background: var(--gold-glow); border-color: var(--gold); }
+.action-label { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+/* CROSS SELL */
+.crosssell-card {
+  background: linear-gradient(135deg, rgba(212,168,67,0.08) 0%, rgba(232,116,58,0.05) 100%);
+  border: 1px solid rgba(212,168,67,0.25);
+  border-radius: var(--radius-lg); padding: 2rem;
+  margin-bottom: 1rem;
+}
+.crosssell-card h3 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 3px;
+  color: var(--gold); margin-bottom: 1rem;
+}
+
+/* DIVIDER */
+.divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* CALLOUT */
+.callout {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  font-size: 13px; color: var(--text2); line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.callout strong { color: var(--gold); }
+
+/* TAG */
+.tag {
+  display: inline-block;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text3); font-size: 11px; font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+}
+.tag.gold { background: rgba(212,168,67,0.1); border-color: rgba(212,168,67,0.3); color: var(--gold); }
+.tag.teal { background: rgba(45,212,176,0.1); border-color: rgba(45,212,176,0.3); color: var(--teal); }
+.tag.blue { background: rgba(79,163,232,0.1); border-color: rgba(79,163,232,0.3); color: var(--blue); }
+.tag.orange { background: rgba(232,116,58,0.1); border-color: rgba(232,116,58,0.3); color: var(--orange); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 2rem 3rem;
+  text-align: center;
+  font-size: 12px; color: var(--text3);
+}
+footer span { color: var(--gold); }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .hero { padding: 3rem 1.5rem 2rem; }
+  #main { padding: 2rem 1rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-mark">
+    <div class="logo-icon">JS</div>
+    <div class="logo-text">
+      <div class="name">Just Solutions</div>
+      <div class="tagline">Marketing Playbook</div>
+    </div>
+  </div>
+  <div class="nav-badge">
+    <span class="dot"></span>
+    2025 Growth Plan
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Masonry · Landscaping · Local Dominance
+    </div>
+    <h1 class="hero-title">GROW YOUR<br><span>BUSINESS</span></h1>
+    <p class="hero-sub">A complete multi-platform advertising strategy for Just Solutions — covering Facebook, Alignable, Nextdoor, door hangers, and flyers to dominate your local market.</p>
+    <div class="platform-chips">
+      <div class="platform-chip"><span class="icon">📘</span> Facebook</div>
+      <div class="platform-chip"><span class="icon">🤝</span> Alignable</div>
+      <div class="platform-chip"><span class="icon">🏘️</span> Nextdoor</div>
+      <div class="platform-chip"><span class="icon">🚪</span> Door Hangers</div>
+      <div class="platform-chip"><span class="icon">📄</span> Flyers</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- OVERVIEW -->
+  <div class="section-header">
+    <div class="section-icon">🧱</div>
+    <div>
+      <div class="section-title">YOUR TWO BUSINESSES = DOUBLE THE POWER</div>
+      <div class="section-sub">Masonry + Landscaping are complementary — cross-sell constantly</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🧱 Masonry Division</div>
+      <p>Retaining walls, fire pits, pavers, brick & block work, concrete, stone installations.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><strong>High Ticket</strong> avg. job value</div>
+        <div class="stat-chip"><strong>Visual</strong> great for social</div>
+        <div class="stat-chip"><strong>Seasonal</strong> spring–fall peak</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌿 Landscaping Division</div>
+      <p>Lawn care, planting, grading, drainage, mulching, cleanup, and design.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><strong>Recurring</strong> repeat clients</div>
+        <div class="stat-chip"><strong>Entry point</strong> leads to masonry</div>
+        <div class="stat-chip"><strong>Referral</strong> neighbor-friendly</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="crosssell-card">
+    <h3>💡 THE CROSS-SELL STRATEGY</h3>
+    <p style="color:var(--text2);font-size:14px;line-height:1.7;">Since you run <strong style="color:var(--gold)">both businesses</strong>, every client touchpoint is an opportunity to upsell. A landscaping customer is a natural patio/retaining wall candidate. A masonry customer likely needs landscaping around their new installation. Always mention both on every piece of marketing material and every job site conversation.</p>
+    <div class="stat-row" style="margin-top:1.2rem;">
+      <span class="tag gold">On masonry flyers → mention landscaping</span>
+      <span class="tag teal">On Nextdoor → post combo packages</span>
+      <span class="tag orange">On door hangers → "We do it ALL"</span>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- FACEBOOK -->
+  <div class="section-header">
+    <div class="section-icon">📘</div>
+    <div>
+      <div class="section-title">FACEBOOK</div>
+      <div class="section-sub">Your broadest reach — organic + paid local advertising</div>
+    </div>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-logo fb">📘</div>
+      <div>
+        <div class="platform-name" style="color:#4fa3e8;">Facebook Business</div>
+        <div class="platform-desc">2 pages · organic posts · paid local ads · community groups</div>
+      </div>
+      <span class="tag blue" style="margin-left:auto;">FREE + PAID</span>
+    </div>
+    <div class="platform-body">
+      <div class="grid-2" style="gap:1.5rem;">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">SETUP STEPS</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet">1</div>Create <strong style="color:var(--text)">two separate Business Pages</strong> — one for Masonry, one for Landscaping, to target different audiences.</li>
+            <li><div class="tip-bullet">2</div>Fill out everything: hours, service area ZIP codes, phone number, and link to your website or estimating tool.</li>
+            <li><div class="tip-bullet">3</div>Upload a professional cover photo — a great before/after shot works perfectly.</li>
+            <li><div class="tip-bullet">4</div>Enable the <strong style="color:var(--text)">Reviews</strong> tab and ask your last 10 customers to leave 5-star ratings.</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">WHAT TO POST (ROTATE THESE)</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet">📸</div>Before & after photos — these perform <em style="color:var(--text)">extremely</em> well in home services. Post every job.</li>
+            <li><div class="tip-bullet">🎥</div>Short video walkthroughs of work in progress. People love watching transformations.</li>
+            <li><div class="tip-bullet">📅</div>Seasonal promotions: "Spring cleanup special!", "Get your patio done before summer!"</li>
+            <li><div class="tip-bullet">⭐</div>Customer testimonials and screenshots of 5-star reviews.</li>
+            <li><div class="tip-bullet">💡</div>"Did you know?" tips — e.g., "Why a retaining wall prevents erosion and protects your foundation."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:1.5rem;">
+        <strong>💰 Facebook Ads — even $5–10/day goes far locally.</strong> Use Local Awareness ads targeting homeowners ages 30–65 within a 5–15 mile radius. Run Lead Generation ads with a simple "Get a Free Quote" form. Boost your best before/after posts for maximum reach.
+      </div>
+
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:10px;margin-top:1rem;">FACEBOOK GROUPS STRATEGY</div>
+      <ul class="tips-list">
+        <li><div class="tip-bullet">👥</div>Join local community groups and post (where allowed): "Locally owned masonry & landscaping — happy to answer questions!"</li>
+        <li><div class="tip-bullet">🤝</div>Engage genuinely before promoting. Comment helpfully on posts, build trust, then mention your services naturally.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ALIGNABLE -->
+  <div class="section-header">
+    <div class="section-icon">🤝</div>
+    <div>
+      <div class="section-title">ALIGNABLE</div>
+      <div class="section-sub">Business-to-business referral network — your #1 B2B tool</div>
+    </div>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-logo al">🤝</div>
+      <div>
+        <div class="platform-name" style="color:var(--gold);">Alignable</div>
+        <div class="platform-desc">Referral network for local businesses · realtors · contractors · property managers</div>
+      </div>
+      <span class="tag gold" style="margin-left:auto;">FREE</span>
+    </div>
+    <div class="platform-body">
+      <div class="callout">
+        <strong>Alignable is a B2B goldmine.</strong> Think referrals from realtors, general contractors, property managers, HOA managers, and builders — people who constantly need your services for their clients.
+      </div>
+      <ul class="tips-list">
+        <li><div class="tip-bullet">✅</div>Complete your profile 100% — include photos, service descriptions, and your service area.</li>
+        <li><div class="tip-bullet">🏡</div>Connect with <strong style="color:var(--text)">realtors</strong> — they need curb appeal work before every listing. This alone can fill your calendar.</li>
+        <li><div class="tip-bullet">🔨</div>Connect with general contractors, fence companies, and irrigation specialists — ideal co-referral partners.</li>
+        <li><div class="tip-bullet">💬</div>Send personal intro messages: <em style="color:var(--text)">"Hey, I do masonry & landscaping locally — if you ever need a sub or want to refer clients, I'd love to connect."</em></li>
+        <li><div class="tip-bullet">⭐</div>Ask happy customers and partners to leave you Alignable <strong style="color:var(--text)">Recommendations</strong> — these are powerful trust signals.</li>
+        <li><div class="tip-bullet">📢</div>Post weekly to stay visible in your local business feed. Even a quick photo update works great.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- NEXTDOOR -->
+  <div class="section-header">
+    <div class="section-icon">🏘️</div>
+    <div>
+      <div class="section-title">NEXTDOOR</div>
+      <div class="section-sub">Your most powerful hyperlocal tool — neighbors trust neighbors</div>
+    </div>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-logo nd">🏘️</div>
+      <div>
+        <div class="platform-name" style="color:var(--teal);">Nextdoor</div>
+        <div class="platform-desc">Neighborhood-level trust · organic recommendations · targeted neighborhood ads</div>
+      </div>
+      <span class="tag teal" style="margin-left:auto;">FREE + PAID</span>
+    </div>
+    <div class="platform-body">
+      <div class="callout">
+        <strong>One great Nextdoor recommendation can turn into 10 phone calls.</strong> Neighbors trust neighbors more than any ad. This platform's ROI for local contractors is unmatched when you work it consistently.
+      </div>
+      <ul class="tips-list">
+        <li><div class="tip-bullet">🏢</div>Set up a <strong style="color:var(--text)">Nextdoor Business Page</strong> (free). Add photos, services, contact info, and your service area.</li>
+        <li><div class="tip-bullet">⭐</div>Ask <em>every</em> satisfied customer to leave you a <strong style="color:var(--text)">Nextdoor recommendation</strong> — this is the single highest-ROI action on this platform.</li>
+        <li><div class="tip-bullet">🏷️</div>Post in the <strong style="color:var(--text)">Local Deals</strong> section with seasonal offers and combo specials.</li>
+        <li><div class="tip-bullet">👀</div>Respond to <em>every</em> post where someone asks "does anyone know a good landscaper/mason?" Be first, be helpful, be genuine.</li>
+        <li><div class="tip-bullet">📍</div>Run <strong style="color:var(--text)">Nextdoor Ads</strong> targeted by specific neighborhoods you want to break into. Very affordable at the neighborhood level.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- DOOR HANGERS -->
+  <div class="section-header">
+    <div class="section-icon">🚪</div>
+    <div>
+      <div class="section-title">DOOR HANGERS</div>
+      <div class="section-sub">Neighborhood blitz strategy — "your neighbor just called us"</div>
+    </div>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-logo dh">🚪</div>
+      <div>
+        <div class="platform-name" style="color:var(--orange);">Door Hangers</div>
+        <div class="platform-desc">Physical neighborhood saturation · job-site radius drops · social proof marketing</div>
+      </div>
+      <span class="tag orange" style="margin-left:auto;">LOW COST</span>
+    </div>
+    <div class="platform-body">
+      <div class="grid-2" style="gap:1.5rem;">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--orange);margin-bottom:10px;">DESIGN MUST-HAVES</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">★</div>Bold headline: <em style="color:var(--text)">"Your Neighbors Just Called Us — Now It's Your Turn!"</em></li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">📸</div>Include a before/after photo if possible — visual proof converts.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">⏰</div>Limited-time offer: <em style="color:var(--text)">"10% off if you call by [date]"</em> — urgency works.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">📱</div>QR code linking to your Facebook page or Google reviews.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">📞</div>Your phone number BIG and bold — easy to read at a glance.</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--orange);margin-bottom:10px;">DISTRIBUTION STRATEGY</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">🏠</div>Every time you finish a job, hit <strong style="color:var(--text)">20–30 homes</strong> around that address immediately.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">📍</div>Mention the street: <em style="color:var(--text)">"We just completed work on Oak Street!"</em> — hyperlocal social proof.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">🎨</div>Use a <strong style="color:var(--text)">different color</strong> for masonry vs landscaping hangers to track which converts better.</li>
+            <li><div class="tip-bullet" style="background:rgba(232,116,58,0.1);border-color:rgba(232,116,58,0.3);color:var(--orange);">🖨️</div>Order from VistaPrint or GotPrint for affordable bulk printing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- FLYERS -->
+  <div class="section-header">
+    <div class="section-icon">📄</div>
+    <div>
+      <div class="section-title">FLYERS</div>
+      <div class="section-sub">Community boards, referral partners, and high-traffic drop spots</div>
+    </div>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-logo fl">📄</div>
+      <div>
+        <div class="platform-name" style="color:var(--blue);">Flyers</div>
+        <div class="platform-desc">Bulletin boards · partner locations · real estate offices · community hubs</div>
+      </div>
+      <span class="tag blue" style="margin-left:auto;">LOW COST</span>
+    </div>
+    <div class="platform-body">
+      <div class="grid-2" style="gap:1.5rem;">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--blue);margin-bottom:10px;">WHERE TO DISTRIBUTE</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🔨</div>Hardware stores — Home Depot, Ace Hardware bulletin boards.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🌱</div>Nurseries and garden centers — perfect audience match.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🏘️</div>HOA community boards and neighborhood clubhouses.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🏠</div>Real estate offices — leave a stack, introduce yourself to agents.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🏛️</div>Chamber of Commerce events — bring a stack every time.</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--blue);margin-bottom:10px;">FLYER DESIGN CHECKLIST</div>
+          <ul class="tips-list">
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">🖼️</div>Eye-catching before/after photo as the centerpiece — fills top half.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">💬</div>Benefit-focused headline: <em style="color:var(--text)">"Turn Your Yard Into the Envy of the Neighborhood"</em></li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">📋</div>Short bullet list of your top 5–6 services. Keep it scannable.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">📞</div>Clear call to action: <em style="color:var(--text)">"Call for a FREE Estimate"</em> with big phone number.</li>
+            <li><div class="tip-bullet" style="background:rgba(79,163,232,0.1);border-color:rgba(79,163,232,0.3);color:var(--blue);">📱</div>QR code to your reviews page + tear-off tabs at the bottom with your number.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ACTION CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon">✅</div>
+    <div>
+      <div class="section-title">QUICK-START CHECKLIST</div>
+      <div class="section-sub">Click each item as you complete it — launch week priorities</div>
+    </div>
+  </div>
+
+  <div class="action-grid">
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Set up Facebook Business Pages for Masonry + Landscaping</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Create/optimize Nextdoor Business profile with photos</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Join Alignable and connect with 10 local businesses</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Design door hangers and order a print batch (VistaPrint)</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Design flyers and identify 5+ local distribution spots</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Ask last 10 customers for Facebook + Nextdoor reviews</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Launch first $5/day Facebook Local Awareness ad</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Drop door hangers after your very next completed job</div>
+    </div>
+    <div class="action-item">
+      <div class="action-check" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'○'">○</div>
+      <div class="action-label">Leave flyers at nearest real estate office this week</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:6px;">
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;">JUST SOLUTIONS LLC</span>
+  </div>
+  <div>Marketing Strategy Playbook · Built with <span>Just Solutions</span> · &copy; 2025</div>
+</footer>
+
+</body>
+</html>
