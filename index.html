@@ -30,7 +30,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg0); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+body { background: var(--bg0); color: var(--text); overflow-x: hidden; }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg1); }
@@ -112,7 +112,8 @@ h1.hero-title span { color: var(--gold); }
   padding: 8px 18px; border-radius: 999px;
   font-size: 13px; font-weight: 500; color: var(--text2);
   display: flex; align-items: center; gap: 8px;
-  transition: all .2s; cursor: default;
+  transition: all .2s; cursor: pointer;
+  text-decoration: none;
 }
 .platform-chip:hover { background: var(--gold-glow); border-color: var(--gold); color: var(--gold); }
 .platform-chip .icon { font-size: 15px; }
@@ -271,10 +272,47 @@ footer {
 footer span { color: var(--gold); }
 
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  .hero { padding: 3rem 1.5rem 2rem; }
-  #main { padding: 2rem 1rem 4rem; }
+  nav { padding: 0.9rem 1rem; gap: 8px; }
+  .logo-text .name { font-size: 17px; letter-spacing: 2px; }
+  .logo-text .tagline { font-size: 9px; }
+  .logo-icon { width: 36px; height: 36px; font-size: 18px; }
+  .nav-badge { font-size: 10px; padding: 4px 10px; letter-spacing: 1px; }
+
+  .hero { padding: 2.5rem 1.2rem 2rem; }
+  h1.hero-title { font-size: clamp(2.8rem, 13vw, 4rem); letter-spacing: 3px; }
+  .hero-sub { font-size: 0.95rem; }
+  .platform-chips { gap: 8px; }
+  .platform-chip { padding: 7px 13px; font-size: 12px; }
+
+  #main { padding: 1.5rem 1rem 3rem; }
+
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .action-grid { grid-template-columns: 1fr; }
+
+  .platform-header { flex-wrap: wrap; gap: 10px; }
+  .platform-header .tag { margin-left: 0 !important; }
+
+  .section-header { flex-wrap: nowrap; gap: 10px; }
+  .section-title { font-size: 1.4rem; letter-spacing: 2px; }
+
+  .crosssell-card { padding: 1.2rem; }
+  .crosssell-card h3 { font-size: 1.2rem; }
+
+  .stat-row { flex-wrap: wrap; }
+
+  footer { padding: 1.5rem 1rem; font-size: 11px; }
 }
+
+@media (max-width: 480px) {
+  h1.hero-title { font-size: clamp(2.4rem, 14vw, 3.2rem); }
+  .platform-chips { gap: 6px; }
+  .platform-chip { padding: 6px 10px; font-size: 11px; gap: 5px; }
+  .card { padding: 1rem; }
+  .platform-body { padding: 1rem; }
+  .tips-list li { font-size: 13px; }
+}
+
+html, body { height: auto; min-height: unset; }
 </style>
 </head>
 <body>
@@ -290,7 +328,7 @@ footer span { color: var(--gold); }
   </div>
   <div class="nav-badge">
     <span class="dot"></span>
-    2025 Growth Plan
+    2026 Growth Plan
   </div>
 </nav>
 
@@ -306,11 +344,11 @@ footer span { color: var(--gold); }
     <h1 class="hero-title">GROW YOUR<br><span>BUSINESS</span></h1>
     <p class="hero-sub">A complete multi-platform advertising strategy for Just Solutions — covering Facebook, Alignable, Nextdoor, door hangers, and flyers to dominate your local market.</p>
     <div class="platform-chips">
-      <div class="platform-chip"><span class="icon">📘</span> Facebook</div>
-      <div class="platform-chip"><span class="icon">🤝</span> Alignable</div>
-      <div class="platform-chip"><span class="icon">🏘️</span> Nextdoor</div>
-      <div class="platform-chip"><span class="icon">🚪</span> Door Hangers</div>
-      <div class="platform-chip"><span class="icon">📄</span> Flyers</div>
+      <a href="#section-facebook" class="platform-chip"><span class="icon">📘</span> Facebook</a>
+      <a href="#section-alignable" class="platform-chip"><span class="icon">🤝</span> Alignable</a>
+      <a href="#section-nextdoor" class="platform-chip"><span class="icon">🏘️</span> Nextdoor</a>
+      <a href="#section-doorhangers" class="platform-chip"><span class="icon">🚪</span> Door Hangers</a>
+      <a href="#section-flyers" class="platform-chip"><span class="icon">📄</span> Flyers</a>
     </div>
   </div>
 </section>
@@ -361,7 +399,7 @@ footer span { color: var(--gold); }
   <hr class="divider"/>
 
   <!-- FACEBOOK -->
-  <div class="section-header">
+  <div id="section-facebook" class="section-header">
     <div class="section-icon">📘</div>
     <div>
       <div class="section-title">FACEBOOK</div>
@@ -416,7 +454,7 @@ footer span { color: var(--gold); }
   <hr class="divider"/>
 
   <!-- ALIGNABLE -->
-  <div class="section-header">
+  <div id="section-alignable" class="section-header">
     <div class="section-icon">🤝</div>
     <div>
       <div class="section-title">ALIGNABLE</div>
@@ -451,7 +489,7 @@ footer span { color: var(--gold); }
   <hr class="divider"/>
 
   <!-- NEXTDOOR -->
-  <div class="section-header">
+  <div id="section-nextdoor" class="section-header">
     <div class="section-icon">🏘️</div>
     <div>
       <div class="section-title">NEXTDOOR</div>
@@ -485,7 +523,7 @@ footer span { color: var(--gold); }
   <hr class="divider"/>
 
   <!-- DOOR HANGERS -->
-  <div class="section-header">
+  <div id="section-doorhangers" class="section-header">
     <div class="section-icon">🚪</div>
     <div>
       <div class="section-title">DOOR HANGERS</div>
@@ -530,7 +568,7 @@ footer span { color: var(--gold); }
   <hr class="divider"/>
 
   <!-- FLYERS -->
-  <div class="section-header">
+  <div id="section-flyers" class="section-header">
     <div class="section-icon">📄</div>
     <div>
       <div class="section-title">FLYERS</div>
@@ -629,7 +667,7 @@ footer span { color: var(--gold); }
   <div style="margin-bottom:6px;">
     <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;">JUST SOLUTIONS LLC</span>
   </div>
-  <div>Marketing Strategy Playbook · Built with <span>Just Solutions</span> · &copy; 2025</div>
+  <div>Marketing Strategy Playbook · Built with <span>Just Solutions</span> · &copy; 2026</div>
 </footer>
 
 </body>
